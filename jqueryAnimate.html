@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!-- Fortæller det er html5 -->
+<!-- html starter og slutter hele dokumentet / lang=da: Fortæller siden er på dansk -->
+<html lang="da">
+
+<!-- I <head> har man opsætning - alt det som man ikke ser som selve indholdet -->
+<head>
+
+    <!-- Sætter tegnsætning til utf-8 som bl.a. tillader danske bogstaver -->
+    <meta charset="utf-8">
+
+    <!-- Titel som ses oppe i browserens tab mv. -->
+    <title>Sigende titel</title>
+
+    <!-- Metatags der fortæller at søgemaskiner er velkomne, hvem der udgiver siden og copyright information -->
+    <meta name="robots" content="All">
+    <meta name="author" content="Udgiver">
+    <meta name="copyright" content="Information om copyright">
+
+    <!-- Sikrer man kan benytte CSS ved at tilkoble en CSS fil -->
+    <link href="css/jqueryAnimate.css" rel="stylesheet" type="text/css">
+
+    <!-- Sikrer den vises korrekt på mobil, tablet mv. ved at tage ift. skærmstørrelse -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+</head>
+
+<!-- i <body> har man alt indhold på siden -->
+<body>
+<div class="animate">
+    <div class="boxes box1">div1</div>
+        <div class="buttons">
+            <button id="show">show</button>
+            <button id="hide">hide</button>
+            <button id="toggle">toggle</button>
+        </div>
+
+    <div class="boxes box2">div2</div>
+        <div class="buttons">
+            <button id="fadein">fade in</button>
+            <button id="fadeout">fade out</button>
+            <button id="togglefade">toggle fade</button>
+        </div>
+
+    <div class="boxes box3">div3</div>
+        <div class="buttons">
+            <button id="slideup">slide up</button>
+            <button id="slidedown">slide down</button>
+            <button id="toggleslide">toggle slide</button>
+        </div>
+    <div class="boxes box4">div4</div>
+        <div class="buttons">
+            <button id="animate">animate</button>
+            <button id="goback">go back </button>
+        </div>
+</div>
+
+<ul class="rslides">
+    <li><img src="demo/images/1.jpg" alt=""></li>
+    <li><img src="demo/images/2.jpg" alt=""></li>
+    <li><img src="demo/images/3.jpg" alt=""></li>
+</ul>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="responsiveslides.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function (e) {
+        $("#hide") .click(function() {
+            $(".box1").hide(200);
+
+        });
+        $("#show") .click(function() {
+            $(".box1").show(200);
+
+        });
+        $("#toggle") .click(function() {
+            $(".box1") .toggle(200);
+        });
+        $("#fadein") .click(function() {
+            $(".box2").fadeIn(200);
+
+        });
+        $("#fadeout") .click(function() {
+            $(".box2").fadeOut(300);
+
+        });
+        $("#togglefade") .click(function() {
+            $(".box2") .fadeToggle(500);
+        });
+
+        $("#slideup") .click(function() {
+            $(".box3").slideUp(200);
+
+        });
+        $("#slidedown") .click(function() {
+            $(".box3").slideDown(300);
+
+        });
+        $("#toggleslide") .click(function() {
+            $(".box3") .slideToggle(500);
+        });
+
+
+        $("#animate") .click(function() {
+            $(".box4").animate({
+                fontSize: "40px",
+                width:"150px"
+            },2000);
+        });
+        $("#goback") .click(function() {
+            $(".box4").animate({
+                width:"300px",
+                fontSize:"16px"
+            },2000);
+
+        });
+
+        $(function() {
+            $(".rslides").responsiveSlides();
+        });
+    });
+</script>
+</body>
+</html>
